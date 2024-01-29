@@ -1,0 +1,103 @@
+.arouwnd {
+    float: left;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    flex-direction: row;
+    height: 520px;
+    position: relative;
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .banner {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+article {
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    z-index: 3000;
+}
+
+.display-one {
+    left: 0px;
+}
+
+.display-two {
+    left: 25%;
+}
+
+.display-tree {
+    left: 50%;
+}
+
+.display-four {
+    left: 75%;
+}
+
+.item-image {
+    position: absolute;
+}
+
+.item-image:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    -webkit-transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -ms-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+    opacity: 0.5;
+    box-sizing: border-box;
+}
+
+.item-image:hover::before {
+    opacity: 0.8 !important;
+}
+
+.banner-split {
+    position: absolute;
+    z-index: 100;
+    color: white;
+    top: 60%;
+    left: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-title {
+    line-height: 1.7rem;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 250px;
+}
+
+.icon-title {
+    vertical-align: middle;
+}
+
+.icon-info {
+    font-size: 18px;
+    vertical-align: middle;
+}
