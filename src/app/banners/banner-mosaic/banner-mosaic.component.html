@@ -7,12 +7,14 @@
                     <!-- <a [href]="item?.categoryLink" mat-raised-button color={{item?.color}}> -->
                     <!-- <a [href]="item?.link" mat-raised-button color={{item?.color}}> -->
                     <a [href]="item?.link" mat-raised-button [ngStyle]="{'background-color': colors[item?.category]}">
-                        {{ item?.category | textTemplate}}
+                        {{ item?.category}}
+                        <!-- {{ item?.category | textTemplate}} -->
                     </a>
                 </span>
                 <span class="entry-title h6">
                     <a [href]="item?.link">
-                        {{ item?.title | ellipsis:50 }}
+                        {{ item?.title }}
+                        <!-- {{ item?.title | ellipsis:50 }} -->
                     </a>
                 </span>
                 <!-- <div class="entry-meta">
