@@ -1,0 +1,120 @@
+.banner-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: [row1] 1fr [row2] 1fr;
+    grid-gap: 3px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.featured {
+    grid-area: 1 / 2 / 3;
+
+    .post-thumbnail {
+        display: block;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .entry-title {
+        font-size: 1.5em;
+    }
+
+    &:hover {
+        .entry-header {
+            transform: translate(0px, -100%);
+        }
+
+        .entry-content {
+            opacity: 1;
+        }
+    }
+}
+
+article {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        .post-thumbnail:before {
+            opacity: 0.8;
+        }
+    }
+}
+
+.entry-title {
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.entry-header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0px, 0px);
+    -webkit-filter: blur(0.2px);
+    filter: blur(0);
+    padding: 1em;
+    z-index: 1;
+    color: #ffffff;
+    transition: all .3s ease-in-out;
+
+    a {
+        color: #ffffff;
+    }
+}
+
+.post-thumbnail {
+    background-color: rgba(0, 0, 0, .05);
+
+    &:before {
+        content: "";
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000;
+        transition: .3s ease;
+        -webkit-backface-visibility: hidden;
+        transform: rotate(0);
+        -webkit-filter: blur(0);
+    }
+}
+
+.meta-category {
+    display: table;
+    margin-bottom: 0.5em;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.mat-icon {
+    font-size: 1rem;
+    height: auto;
+    display: inline-block;
+}
+
+.entry-content {
+    opacity: 0;
+    position: absolute;
+    margin-top: 15px;
+    transition: opacity .3s ease-in-out;
+    // line-height: 2.4rem;
+}

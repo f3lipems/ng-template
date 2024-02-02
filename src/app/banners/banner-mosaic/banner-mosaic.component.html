@@ -1,0 +1,41 @@
+<section class="banner-two">
+    <div class="banner-container">
+        @for (item of items; track $index) {
+        <div [ngClass]="{'featured': item.featured, 'article': !item.featured}" class="herald-fa-item herald-cat-2">
+            <header class="entry-header">
+                <span class="meta-category">
+                    <!-- <a [href]="item?.categoryLink" mat-raised-button color={{item?.color}}> -->
+                    <!-- <a [href]="item?.link" mat-raised-button color={{item?.color}}> -->
+                    <a [href]="item?.link" mat-raised-button [ngStyle]="{'background-color': colors[item?.category]}">
+                        {{ item?.category | textTemplate}}
+                    </a>
+                </span>
+                <span class="entry-title h6">
+                    <a [href]="item?.link">
+                        {{ item?.title | ellipsis:50 }}
+                    </a>
+                </span>
+                <!-- <div class="entry-meta">
+                      <div class="meta-item entry-comments">
+                         <mat-icon>comment</mat-icon>
+                         <a href="https://demo.mekshq.com/herald/?p=140#respond">
+                            Add Comment
+                         </a>
+                      </div>
+                   </div> -->
+                <div class="entry-content">
+                    <div [innerHtml]="item?.description"></div>
+                    <!-- <p>
+                         {{ item?.description }}
+                      </p> -->
+                </div>
+                <a href="#" class="fa-post-bg"></a>
+            </header>
+            <a class="post-thumbnail" [href]="item?.link" title="item?.title">
+                <img width="379" height="259" [src]="item?.image" style="object-fit: cover;" alt="">
+            </a>
+
+        </div>
+        }
+    </div>
+</section>
