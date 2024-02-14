@@ -5,12 +5,17 @@
     grid-gap: 3px;
 }
 
+a {
+    text-decoration: none;
+}
+
 a:hover {
     text-decoration: none;
 }
 
 .featured {
     grid-area: 1 / 2 / 3;
+    position: relative;
 
     .post-thumbnail {
         display: block;
@@ -38,9 +43,9 @@ a:hover {
     }
 }
 
-article {
+.article {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 
     &:hover {
         .post-thumbnail:before {
